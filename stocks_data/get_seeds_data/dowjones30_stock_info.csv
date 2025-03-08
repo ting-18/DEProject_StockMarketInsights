@@ -1,0 +1,31 @@
+ticker,company_name,sector,industry,market_cap,country
+MMM,3M Company,industrials,Conglomerates,80137461760,United States
+AXP,American Express Company,financial-services,Credit Services,199645528064,United States
+AMGN,Amgen Inc.,healthcare,Drug Manufacturers - General,170062987264,United States
+AMZN,"Amazon.com, Inc.",consumer-cyclical,Internet Retail,2208136691712,United States
+AAPL,Apple Inc.,technology,Consumer Electronics,3541310111744,United States
+BA,The Boeing Company,industrials,Aerospace & Defense,122382073856,United States
+CAT,Caterpillar Inc.,industrials,Farm & Heavy Construction Machinery,161775190016,United States
+CVX,Chevron Corporation,energy,Oil & Gas Integrated,265516089344,United States
+CSCO,"Cisco Systems, Inc.",technology,Communication Equipment,254451417088,United States
+KO,The Coca-Cola Company,consumer-defensive,Beverages - Non-Alcoholic,301414088704,United States
+DIS,The Walt Disney Company,communication-services,Entertainment,197609521152,United States
+GS,"The Goldman Sachs Group, Inc.",financial-services,Capital Markets,185060982784,United States
+HD,"The Home Depot, Inc.",consumer-cyclical,Home Improvement Retail,383785795584,United States
+HON,Honeywell International Inc.,industrials,Conglomerates,136236015616,United States
+IBM,International Business Machines Corporation,technology,Information Technology Services,233067806720,United States
+JNJ,Johnson & Johnson,healthcare,Drug Manufacturers - General,397546225664,United States
+JPM,JPMorgan Chase & Co.,financial-services,Banks - Diversified,703305547776,United States
+MCD,McDonald's Corporation,consumer-cyclical,Restaurants,219661041664,United States
+MRK,"Merck & Co., Inc.",healthcare,Drug Manufacturers - General,235401674752,United States
+MSFT,Microsoft Corporation,technology,Software - Infrastructure,2981174444032,United States
+NKE,"NIKE, Inc.",consumer-cyclical,Footwear & Accessories,115091103744,United States
+NVDA,NVIDIA Corporation,technology,Semiconductors,2862119911424,United States
+PG,The Procter & Gamble Company,consumer-defensive,Household & Personal Products,409434259456,United States
+CRM,"Salesforce, Inc.",technology,Software - Application,279415291904,United States
+SHW,The Sherwin-Williams Company,basic-materials,Specialty Chemicals,91074207744,United States
+TRV,"The Travelers Companies, Inc.",financial-services,Insurance - Property & Casualty,58502369280,United States
+UNH,UnitedHealth Group Incorporated,healthcare,Healthcare Plans,435384614912,United States
+VZ,Verizon Communications Inc.,communication-services,Telecom Services,180343554048,United States
+V,Visa Inc.,financial-services,Credit Services,680323252224,United States
+WMT,Walmart Inc.,consumer-defensive,Discount Stores,771044802560,United States

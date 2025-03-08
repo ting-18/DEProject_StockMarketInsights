@@ -1,0 +1,3 @@
+yfinance
+apache-airflow-providers-google
+pyarrow

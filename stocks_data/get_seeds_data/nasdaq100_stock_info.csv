@@ -1,0 +1,102 @@
+ticker,company_name,sector,industry,market_cap,country
+ADBE,Adobe Inc.,technology,Software - Application,196242915328,United States
+AMD,"Advanced Micro Devices, Inc.",technology,Semiconductors,164754194432,United States
+ABNB,"Airbnb, Inc.",consumer-cyclical,Travel Services,88590663680,United States
+GOOGL,Alphabet Inc.,communication-services,Internet Content & Information,2118526173184,United States
+GOOG,Alphabet Inc.,communication-services,Internet Content & Information,2121666265088,United States
+AMZN,"Amazon.com, Inc.",consumer-cyclical,Internet Retail,2208136691712,United States
+AEP,"American Electric Power Company, Inc.",utilities,Utilities - Regulated Electric,55128686592,United States
+AMGN,Amgen Inc.,healthcare,Drug Manufacturers - General,170062987264,United States
+ADI,"Analog Devices, Inc.",technology,Semiconductors,113811611648,United States
+ANSS,"ANSYS, Inc.",technology,Software - Application,28730507264,United States
+AAPL,Apple Inc.,technology,Consumer Electronics,3541310111744,United States
+AMAT,"Applied Materials, Inc.",technology,Semiconductor Equipment & Materials,126188347392,United States
+APP,AppLovin Corporation,technology,Software - Application,108106645504,United States
+ARM,Arm Holdings plc,technology,Semiconductors,131518119936,United Kingdom
+ASML,ASML Holding N.V.,technology,Semiconductor Equipment & Materials,295209074688,Netherlands
+AZN,AstraZeneca PLC,healthcare,Drug Manufacturers - General,241701715968,United Kingdom
+TEAM,Atlassian Corporation,technology,Software - Application,72503263232,Australia
+ADSK,"Autodesk, Inc.",technology,Software - Application,57592619008,United States
+ADP,"Automatic Data Processing, Inc.",technology,Software - Application,126304960512,United States
+AXON,"Axon Enterprise, Inc.",industrials,Aerospace & Defense,40990400512,United States
+BKR,Baker Hughes Company,energy,Oil & Gas Equipment & Services,41901539328,United States
+BIIB,Biogen Inc.,healthcare,Drug Manufacturers - General,21044334592,United States
+BKNG,Booking Holdings Inc.,consumer-cyclical,Travel Services,161367425024,United States
+AVGO,Broadcom Inc.,technology,Semiconductors,900795727872,United States
+CDNS,"Cadence Design Systems, Inc.",technology,Software - Application,67074228224,United States
+CDW,CDW Corporation,technology,Information Technology Services,22866794496,United States
+CHTR,"Charter Communications, Inc.",communication-services,Telecom Services,53715963904,United States
+CTAS,Cintas Corporation,industrials,Specialty Business Services,82843541504,United States
+CSCO,"Cisco Systems, Inc.",technology,Communication Equipment,254451417088,United States
+CCEP,Coca-Cola Europacific Partners PLC,consumer-defensive,Beverages - Non-Alcoholic,39411933184,United Kingdom
+CTSH,Cognizant Technology Solutions Corporation,technology,Information Technology Services,41688711168,United States
+CMCSA,Comcast Corporation,communication-services,Telecom Services,134453075968,United States
+CEG,Constellation Energy Corporation,utilities,Utilities - Renewable,71742078976,United States
+CPRT,"Copart, Inc.",industrials,Specialty Business Services,52565118976,United States
+CSGP,"CoStar Group, Inc.",real-estate,Real Estate Services,32817379328,United States
+COST,Costco Wholesale Corporation,consumer-defensive,Discount Stores,465095196672,United States
+CRWD,"CrowdStrike Holdings, Inc.",technology,Software - Infrastructure,90011893760,United States
+CSX,CSX Corporation,industrials,Railroads,58581651456,United States
+DDOG,"Datadog, Inc.",technology,Software - Application,39448707072,United States
+DXCM,"DexCom, Inc.",healthcare,Medical Devices,32027672576,United States
+FANG,"Diamondback Energy, Inc.",energy,Oil & Gas E&P,41303228416,United States
+DASH,"DoorDash, Inc.",communication-services,Internet Content & Information,81952325632,United States
+EA,Electronic Arts Inc.,communication-services,Electronic Gaming & Multimedia,34935844864,United States
+EXC,Exelon Corporation,utilities,Utilities - Regulated Electric,43586338816,United States
+FAST,Fastenal Company,industrials,Industrial Distribution,42716364800,United States
+FTNT,"Fortinet, Inc.",technology,Software - Infrastructure,82126430208,United States
+GEHC,GE HealthCare Technologies Inc.,healthcare,Health Information Services,38760579072,United States
+GILD,"Gilead Sciences, Inc.",healthcare,Drug Manufacturers - General,143763210240,United States
+GFS,GLOBALFOUNDRIES Inc.,technology,Semiconductors,21133527040,United States
+HON,Honeywell International Inc.,industrials,Conglomerates,136236015616,United States
+IDXX,"IDEXX Laboratories, Inc.",healthcare,Diagnostics & Research,35559129088,United States
+INTC,Intel Corporation,technology,Semiconductors,90107297792,United States
+INTU,Intuit Inc.,technology,Software - Application,172632326144,United States
+ISRG,"Intuitive Surgical, Inc.",healthcare,Medical Instruments & Supplies,202588307456,United States
+KDP,Keurig Dr Pepper Inc.,consumer-defensive,Beverages - Non-Alcoholic,45179772928,United States
+KLAC,KLA Corporation,technology,Semiconductor Equipment & Materials,95121842176,United States
+KHC,The Kraft Heinz Company,consumer-defensive,Packaged Foods,37032738816,United States
+LRCX,Lam Research Corporation,technology,Semiconductor Equipment & Materials,101473329152,United States
+LIN,Linde plc,basic-materials,Specialty Chemicals,221441048576,United Kingdom
+LULU,Lululemon Athletica Inc.,consumer-cyclical,Apparel Retail,42567159808,Canada
+MAR,"Marriott International, Inc.",consumer-cyclical,Lodging,74740916224,United States
+MRVL,"Marvell Technology, Inc.",technology,Semiconductors,77998137344,United States
+MELI,"MercadoLibre, Inc.",consumer-cyclical,Internet Retail,107111948288,Uruguay
+META,"Meta Platforms, Inc.",communication-services,Internet Content & Information,1663271698432,United States
+MCHP,Microchip Technology Incorporated,technology,Semiconductors,32075526144,United States
+MU,"Micron Technology, Inc.",technology,Semiconductors,105110790144,United States
+MSFT,Microsoft Corporation,technology,Software - Infrastructure,2981174444032,United States
+MSTR,MicroStrategy Incorporated,technology,Software - Application,80311238656,United States
+MDLZ,"Mondelez International, Inc.",consumer-defensive,Confectioners,85761040384,United States
+MDB,"MongoDB, Inc.",technology,Software - Infrastructure,21165688832,United States
+MNST,Monster Beverage Corporation,consumer-defensive,Beverages - Non-Alcoholic,53864349696,United States
+NFLX,"Netflix, Inc.",communication-services,Entertainment,423872954368,United States
+NVDA,NVIDIA Corporation,technology,Semiconductors,2862119911424,United States
+NXPI,NXP Semiconductors N.V.,technology,Semiconductors,54977208320,Netherlands
+ORLY,"O'Reilly Automotive, Inc.",consumer-cyclical,Specialty Retail,76726116352,United States
+ODFL,"Old Dominion Freight Line, Inc.",industrials,Trucking,37518442496,United States
+ON,ON Semiconductor Corporation,technology,Semiconductors,19591862272,United States
+PCAR,PACCAR Inc,industrials,Farm & Heavy Construction Machinery,54038966272,United States
+PLTR,Palantir Technologies Inc.,technology,Software - Infrastructure,211387285504,United States
+PANW,"Palo Alto Networks, Inc.",technology,Software - Infrastructure,122011779072,United States
+PAYX,"Paychex, Inc.",technology,Software - Application,54765584384,United States
+PYPL,"PayPal Holdings, Inc.",financial-services,Credit Services,68752318464,United States
+PDD,PDD Holdings Inc.,consumer-cyclical,Internet Retail,166944047104,Ireland
+PEP,"PepsiCo, Inc.",consumer-defensive,Beverages - Non-Alcoholic,211046432768,United States
+QCOM,QUALCOMM Incorporated,technology,Semiconductors,175289942016,United States
+REGN,"Regeneron Pharmaceuticals, Inc.",healthcare,Biotechnology,75122679808,United States
+ROP,"Roper Technologies, Inc.",technology,Software - Application,63766286336,United States
+ROST,"Ross Stores, Inc.",consumer-cyclical,Apparel Retail,45741355008,United States
+SBUX,Starbucks Corporation,consumer-cyclical,Restaurants,126872018944,United States
+SNPS,"Synopsys, Inc.",technology,Software - Infrastructure,69263572992,United States
+TTWO,"Take-Two Interactive Software, Inc.",communication-services,Electronic Gaming & Multimedia,37913104384,United States
+TMUS,"T-Mobile US, Inc.",communication-services,Telecom Services,299980750848,United States
+TSLA,"Tesla, Inc.",consumer-cyclical,Auto Manufacturers,897730740224,United States
+TXN,Texas Instruments Incorporated,technology,Semiconductors,178033836032,United States
+TTD,"The Trade Desk, Inc.",technology,Software - Application,33009762304,United States
+VRSK,"Verisk Analytics, Inc.",industrials,Consulting Services,41646542848,United States
+VRTX,Vertex Pharmaceuticals Incorporated,healthcare,Biotechnology,126248239104,United States
+WBD,"Warner Bros. Discovery, Inc.",communication-services,Entertainment,28057907200,United States
+WDAY,"Workday, Inc.",technology,Software - Application,69056258048,United States
+XEL,Xcel Energy Inc.,utilities,Utilities - Regulated Electric,39489032192,United States
+ZS,"Zscaler, Inc.",technology,Software - Infrastructure,30143092736,United States
