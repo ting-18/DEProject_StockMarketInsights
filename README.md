@@ -55,14 +55,55 @@ The Technologies used:
 How does this end-to-end pipeline work?
 
 
-### Datasource
-Narrow down S&P 500, NASDAQ 100 and Dow Jones 30
+### Data Sources
+- Raw S&P 500 stocks data
+  - Get historical data from Yahoo Finance API via yfinance package.
+  - 
+- Reference table () for stock company information.
+- External data sources like COVID-cases, events, news that could impact stock price.
 
-Get historical Stock Market data from a Python library- yfinance.
+NASDAQ 100 and Dow Jones 30
 
-### Data modeling
 
-### Data Transformation
+### dbt project
+A standard dbt project focuses on transforming and modeling raw data into analytics-ready tables, i.e. defining clear layers of transformations that clean, aggregate, and structure stock market data for analytics and reporting.
+### Design the dbt Models
+dbt follows a staging → intermediate → marts structure.
+#### 1. Staging Layer (stg_*) - Cleans and standardizes raw data.
+Load raw data into staging tables, ensuring clean and structured formats.
+Remove duplicates, rename columns, and standardize data types.
+| Table Name | Purpose |
+|------------|----------|
+| stg_stocks | Standardizes stock price data (Open, High, Low, Close, Volume).|
+
+
+
+
+#### 2. Intermediate Layer (int_*) - Performs calculations and aggregations.
+Create aggregated or derived calculations such as moving averages, stock returns, volatility, etc.
+| Table Name | Purpose |
+|------------|----------|
+| int_stock_returns | Calculates daily, weekly, and monthly returns.|
+| int_moving_averages | Computes 30-day and 90-day moving averages. |
+| int_sector_performance | Aggregates stock performance by sector. |
+| int_volatility | Measures stock volatility (standard deviation of returns). |
+| int_news_impact | Computes sentiment scores for stock movements. |
+
+
+#### 3. Marts Layer (dim_* and fact_*) - Provides final tables for dashboarding.
+Fact tables: Contain numerical values for analytics.
+Dimension tables: Contain descriptive information.
+| Table Name | Purpose |
+|------------|----------|
+| fact_stock_prices |	Main table with price, volume, returns, and moving averages. |
+| fact_trading_activity |	Aggregated trading volume and order flow. |
+| fact_news_sentiment |	Sentiment trends over time for stocks. |
+| dim_stock_metadata | Stock details (company name, sector, industry). |
+| dim_dates	| Date dimension for time-based filtering. |
+	
+
+
+
 
 ### Dashboard/Visualization
 
