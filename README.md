@@ -257,6 +257,15 @@ Bar Chart: Shows percentage gains/losses per sector post-pandemic.
     ```
 3. EL pipeline via airflow  
 
+- Environment setup
+  ```
+  #Git Bash shell
+  echo $GOOGLE_APPLICATION_CREDENTIALS
+  cp $HOME/AppData/Roaming/gcloud/application_default_credentials.json ~/.google/credentials/google_credentials.json
+
+  ```
+  Edit docker-compose.yaml: GCP_PROJECT_ID
+
 - Build and run custom airflow container
     ```
     #Git Bash shell      
