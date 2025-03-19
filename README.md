@@ -1,4 +1,4 @@
-# Stock Market Dashboard
+# Stock Market Insights
 
 ## Table of Content
 
@@ -234,21 +234,45 @@ Bar Chart: Shows percentage gains/losses per sector post-pandemic.
 
 
 ### Reproducing this repo(Try these in a VM after finished this project)
-1. git clone
+1. git clone 
 2. Environment setup
-  - Set up Cloud Infrastructure \
-    Local setup terraform, GCP account, projectID
-    Excute
+  - Set up Terraform, GCP account and SDK \
+    Local install and setup terraform:
+    GCP account setup: Apply a GCP account, try free trial, new project and copy project ID.
+    Download and install SDK (Google Cloud CLI). and run commands below to authorizing gcloud CLI access Google Cloud.	
+       ```
+       #Git Bash shell
+       gcloud init
+       gcloud auth application-default login
+       ```
+  - Set up Cloud Infrastructure(Bucket and dataset) via terraform
+    Edit terraform/variables.tf and run commands below.
     ```
-    #Git Bash shell
+    #Git Bash shell      
     cd 1_terraform-gcp/terraform
     terraform init
     terraform plan
     terraform apply
     terraform destroy 
     ```
-    
-- Credentials
+3. EL pipeline via airflow  
+
+- Build and run custom airflow container
+    ```
+    #Git Bash shell      
+    cd airflow
+    docker-compose build    (it takes 10 mins for the first time)
+    docker-compose up airflow-init
+    docker-compose up -d
+
+    docker-compose down   
+    ```
+- Run Dag/pipeline in Browser: localhost:8080    airflow/airflow
+
+4. dbt Transformation
+
+
+
 
 
 ## Further work
