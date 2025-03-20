@@ -13,9 +13,13 @@
 - The project aims to provide investors insights via tracking the performance of S&P 500 stocks (like Apple, Amazon, Google, Nvidia, Microsoft) over time and visualize key trends such as moving averages, volatility, and sector performance.
   (monitoring S&P 500 sector performance daily.)
 long-term Stock investors   make smarter investment choices
-This project aims to 
-  
-- Some of the questions answered
+
+
+### Problem description 
+- xxxx
+
+
+- Some of the questions answered:
   ....
 
 Which stocks/sectors recovered fastest? how long does it take?
@@ -44,65 +48,13 @@ automate process
 Top-Performing & Worst-Performing Stocks
 
 
-### Architecture
+- What did I do in this project?
+batch processing
+
+## Architecture and Technologies
 
 ![architecture_image](images/  .png)
 
-
-
-- Batch Processing Tools: 
-  Store historical stock data in BigQuery, Redshift, Snowflake.
-Use Apache Spark or DBT for data transformation & analytics.
-
-
-
-
-
-
-
-
-# Post-Pandemic Stock Market Recovery
-
-e.g.1. Macro-Economic Impact Report:
-Objective: Analyzes the impact of macroeconomic factors (interest rates, inflation, GDP growth) on a stock or sector.
-e.g.2. Sector Performance Report:
-Objective: Analyzes the performance of a specific sector, such as technology or healthcare, and its impact on individual stocks within that sector.
-Example:
-Sector: Technology
-Sector Performance (Last Quarter):
-Total Market Cap: $5 trillion
-Average Return: +6%
-Best Performing Stocks:
-
-
-
-
-### Metrics
-
-Sector-wise Performance Heatmap to visualize sector-wise stock performance over time
-Which sectors recovered fastest?
-Tech (XLK) and Healthcare (XLV) likely have early strong green signals.
-Which sectors lagged in recovery?
-Travel & Real Estate may show prolonged red zones before turning green.
-How did stock movements change over time?
-Identify periods of volatility (e.g., Fed rate hikes in 2022).
-
-
-
-
-
-
-- 分析方法： 宏观分析 --》找最早恢复的那支/类股票-->具体分析原因
-### metrics:
-Define Recovery Metrics
-You can measure stock/sector recovery speed using:
-
-Recovery Percentage = (Post-pandemic High - Pandemic Low) / (Pre-pandemic High - Pandemic Low) * 100
-Time to Recovery = Number of days taken to reach pre-pandemic levels
-Trading Volume Surge = Indicates renewed investor confidence
-
-
-### Architecture and Technologies
 
 
 
@@ -119,6 +71,19 @@ The Technologies used:
 - Dashboard: Google Data Studio
 
 How does this end-to-end pipeline work?
+
+
+- Batch Processing Tools: 
+  Store historical stock data in BigQuery, Redshift, Snowflake.
+Use Apache Spark or DBT for data transformation & analytics.
+
+
+
+
+## Data
+
+
+
 
 
 ### Data Sources
@@ -418,6 +383,47 @@ Line Chart: Tracks the index trends (e.g., S&P 500, Nasdaq, Dow Jones) before, d
 Cumulative Returns Chart: Shows how different indexes or major stocks have rebounded compared to a pre-pandemic baseline.
 2. Sector-wise Performance
 Bar Chart: Shows percentage gains/losses per sector post-pandemic.
+
+
+
+
+
+
+
+
+# Post-Pandemic Stock Market Recovery
+
+e.g.1. Macro-Economic Impact Report:
+Objective: Analyzes the impact of macroeconomic factors (interest rates, inflation, GDP growth) on a stock or sector.
+e.g.2. Sector Performance Report:
+Objective: Analyzes the performance of a specific sector, such as technology or healthcare, and its impact on individual stocks within that sector.
+Example:
+Sector: Technology
+Sector Performance (Last Quarter):
+Total Market Cap: $5 trillion
+Average Return: +6%
+Best Performing Stocks:
+
+
+### Metrics
+
+Sector-wise Performance Heatmap to visualize sector-wise stock performance over time
+Which sectors recovered fastest?
+Tech (XLK) and Healthcare (XLV) likely have early strong green signals.
+Which sectors lagged in recovery?
+Travel & Real Estate may show prolonged red zones before turning green.
+How did stock movements change over time?
+Identify periods of volatility (e.g., Fed rate hikes in 2022).
+
+- 分析方法： 宏观分析 --》找最早恢复的那支/类股票-->具体分析原因
+### metrics:
+Define Recovery Metrics
+You can measure stock/sector recovery speed using:
+
+Recovery Percentage = (Post-pandemic High - Pandemic Low) / (Pre-pandemic High - Pandemic Low) * 100
+Time to Recovery = Number of days taken to reach pre-pandemic levels
+Trading Volume Surge = Indicates renewed investor confidence
+
 
 
 
