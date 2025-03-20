@@ -8,35 +8,47 @@
 
 
 ## Overview
-- This is a data engineering project focused on stock market Insights。 
-- The project aims to provide investors insights via monitoring S&P 500 sector performance daily. 
-- Some of the questions answered:
+- This is a data engineering project focused on stock market Insights。
+### project goal
+- The project aims to provide investors insights via tracking the performance of S&P 500 stocks (like Apple, Amazon, Google, Nvidia, Microsoft) over time and visualize key trends such as moving averages, volatility, and sector performance.
+  (monitoring S&P 500 sector performance daily.)
+long-term Stock investors   make smarter investment choices
+This project aims to 
+  
+- Some of the questions answered
   ....
+
+Which stocks/sectors recovered fastest? how long does it take?
+Which stocks/sectors lagged in recovery?
+Which stocks/sectors start to recover first?
+Which stocks/sectors were benefited?
+Which stocks/sectors dropped the most and recovered fastest?(volatility) 
+stock trend
+全球恢复情况（China, India）
+- Why and possible effects
+
+
+"Which stocks had the highest monthly return?"
+"How volatile was a stock over a year?"
+"Which sector performed best in Q1 2024?"
+  
 
 
 stock market data, sector classifications, and historical trends. 
-
-You want to track the performance of FAANG stocks (Facebook, Apple, Amazon, Netflix, Google) over time and visualize key trends such as moving averages, volatility, and sector performance.
-
 A financial analyst wants to monitor S&P 500 sector performance to make informed investment decisions. The goal is to:
 ✅ Collect daily stock prices of top stocks in each sector.
 ✅ Compute moving averages, volatility, and sector-wise performance.
 ✅ Update a Power BI dashboard daily using batch processing.
-
-
-
 automate process
-### Problem Description
-long-term Stock investors   make smarter investment choices
-This project aims to 
-
-### 
-
 
 Top-Performing & Worst-Performing Stocks
 
 
 ### Architecture
+
+![architecture_image](images/  .png)
+
+
 
 - Batch Processing Tools: 
   Store historical stock data in BigQuery, Redshift, Snowflake.
@@ -62,32 +74,8 @@ Total Market Cap: $5 trillion
 Average Return: +6%
 Best Performing Stocks:
 
-## Table of Content
 
 
-## Overview
-This is a data engineer project focus on stock market。 
-The goal of this project is to ....
-
-
-automate process
-### Problem Description
-This project aims to 
-
-### Some of the questions answered:
-Which stocks/sectors recovered fastest? how long does it take?
-Which stocks/sectors lagged in recovery?
-Which stocks/sectors start to recover first?
-Which stocks/sectors were benefited?
-Which stocks/sectors dropped the most and recovered fastest?(volatility) 
-stock trend
-全球恢复情况（China, India）
-- Why and possible effects
-
-
-"Which stocks had the highest monthly return?"
-"How volatile was a stock over a year?"
-"Which sector performed best in Q1 2024?"
 
 ### Metrics
 
