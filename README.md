@@ -131,10 +131,11 @@ NASDAQ 100 and Dow Jones 30
 ### dbt project
 A standard dbt project focuses on transforming and modeling raw data into analytics-ready tables, i.e. defining clear layers of transformations that clean, aggregate, and structure stock market data for analytics and reporting.
 ### Design the dbt Models
-dbt follows a staging → intermediate → marts structure.
+dbt follows a staging → intermediate → marts structure. Star Schema.
 #### 1. Staging Layer (stg_*) - Cleans and standardizes raw data.
 Load raw data into staging tables, ensuring clean and structured formats.
-Remove duplicates, rename columns, and standardize data types.
+This layer removes duplicates, renames columns, afill in missing values, and standardizes data types to ensure the data format matches your target schema.
+
 | Table Name | Purpose |
 |------------|----------|
 | stg_stocks | Standardizes stock price data (Open, High, Low, Close, Volume).|
