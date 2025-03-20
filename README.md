@@ -237,14 +237,16 @@ Bar Chart: Shows percentage gains/losses per sector post-pandemic.
 1. git clone 
 2. Environment setup
   - Set up Terraform, GCP account and SDK \
-    Local install and setup terraform:
-    GCP account setup: Apply a GCP account, try free trial, new project and copy project ID.
-    Download and install SDK (Google Cloud CLI). and run commands below to authorizing gcloud CLI access Google Cloud.	
+    Local install and setup terraform: \
+    GCP account setup: Apply a GCP account, try free trial, new project and copy project ID. \
+    Download and install SDK (Google Cloud CLI). and run commands below to authorizing gcloud CLI access Google Cloud.\
        ```
        #Git Bash shell
        gcloud init
-       gcloud auth application-default login
-       ```
+       gcloud auth application-default login   #After this, $GOOGLE_APPLICATION_CREDENTIALS was set to google cloud account default credential.json. Which is different from Service Account credential.
+       ``` 
+    Set Service Account for this project: GCP console >menu>IAM & Admin> Service Accounts -> Create service account ---> once created, click three dots at the right>Manage Keys>json> save the downloaded serviceaccount_credential.json file.
+    
   - Set up Cloud Infrastructure(Bucket and dataset) via terraform
     Edit terraform/variables.tf and run commands below.
     ```
@@ -257,12 +259,10 @@ Bar Chart: Shows percentage gains/losses per sector post-pandemic.
     ```
 3. EL pipeline via airflow  
 
-- Environment setup
+- Environment setup 
   ```
-  #Git Bash shell
-  echo $GOOGLE_APPLICATION_CREDENTIALS
-  cp $HOME/AppData/Roaming/gcloud/application_default_credentials.json ~/.google/credentials/google_credentials.json
-
+  #Git Bash shell  
+  mv $HOME/Downloads/<YOUR SERVICE ACCOUNT KEY>.json ~/.google/credentials/google_credentials.json
   ```
   Edit docker-compose.yaml: GCP_PROJECT_ID
 
@@ -276,10 +276,15 @@ Bar Chart: Shows percentage gains/losses per sector post-pandemic.
 
     docker-compose down   
     ```
-- Run Dag/pipeline in Browser: localhost:8080    airflow/airflow
+- Check or manually run Dag/pipeline in Browser: localhost:8080    airflow/airflow \
+  Two DAGs: stocksdata_gcs_bq_dag - Extrat stock data for 10 years. \
+  		_dag - Scheduled daily, and extract today's stock data at the end of a day.
+  
 
 4. dbt Transformation
-
+   ```
+   dbt 
+   ```
 
 
 
