@@ -60,32 +60,24 @@ batch processing
 
 
 The Technologies used:
-- Cloud: GCP
-- Container: Docker
+- Cloud: Google Cloud Platform(GCP)
+- Container: Docker, Docker Compose
 - Infrastructure as code (IaC): Terraform
 - Workflow orchestration: Airflow
-- Storage / DataLake: GCS
+- Storage / DataLake: Google Cloud Storage(GCS)
 - Data Warehouse: BigQuery
-- Batch processing: Spark
-- Data Modeling: dbt
-- Dashboard: Google Data Studio
+- Batch processing: Python
+- Transformation/Data Modeling: dbt
+- Dashboard/ Data Visualization: Google Data Studio
 
 How does this end-to-end pipeline work?
 
 
-- Batch Processing Tools: 
-  Store historical stock data in BigQuery, Redshift, Snowflake.
-Use Apache Spark or DBT for data transformation & analytics.
 
 
 
 
 ## Data
-
-
-
-
-
 ### Data Sources
 - Raw S&P 500 stocks data
   - Get historical data from Yahoo Finance API via yfinance package.
@@ -253,7 +245,7 @@ Sector Analysis Fact → Another fact table at the sector level.
 Dimension Tables → Companies, Dates, Sectors.
 
 
-### Desine dbt Models
+### Design dbt Models
 #### 1. Staging Layer (stg_*) - Cleans and standardizes raw data.
 - Load raw data into staging tables, ensuring clean and structured formats.
 - Normalization: \
@@ -487,5 +479,5 @@ Trading Volume Surge = Indicates renewed investor confidence
 
 
 ## Further work
-(all the tickers whose stock pice is under 200 dollars )
+(all the tickers whose stock price is under 200 dollars )
 stock recommendation model
