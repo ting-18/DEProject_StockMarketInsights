@@ -227,6 +227,7 @@ stock_analysis/
 │── dbt_project.yml
 │── packages.yml
 │── seeds/
+│   ├── sp500_stocks_info
 │── snapshots/
 │── tests/
 │── macros/
@@ -235,8 +236,11 @@ stock_analysis/
 staging/ → Cleans and standardizes raw data (1:1 with source tables).
 intermediate/ → Derived tables for calculations (e.g., returns, volatility).
 marts/ → Final analytics tables for reporting.
-seeds/ → Static reference data (e.g., sector classifications).
+seeds/ → Static reference data (e.g., stocks info).
 tests/ → Data quality tests (e.g., null checks, uniqueness). Ensure data quality with tests.
+
+
+
 
 
 Stock Price Fact (Daily Data) → Base transactional fact.
