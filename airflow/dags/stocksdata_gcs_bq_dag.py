@@ -23,6 +23,7 @@ BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'stock_market_dataset')
 # Load S&P 500 tickers from Wikipedia
 SP500_URL = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 TICKERS = pd.read_html(SP500_URL)[0]['Symbol'].tolist()
+# TICKERS.append("^GSPC")  # append S&P 500 index tikcer
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 
 def extract_data(tickers, n):
