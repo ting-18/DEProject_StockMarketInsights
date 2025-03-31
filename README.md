@@ -8,48 +8,22 @@
 
 
 ## Overview
-- This is a data engineering project focused on stock market Insights。
+- This data engineering project focused on batch processing data to provide investors with stock market insights.
 ### project goal
-- The project aims to provide investors insights via tracking the performance of S&P 500 stocks (like Apple, Amazon, Google, Nvidia, Microsoft) over time and visualize key trends such as moving averages, volatility, and sector performance.
-  (monitoring S&P 500 sector performance daily.)
-long-term Stock investors   make smarter investment choices
-
+- The project monitors S&P 500 stocks performance (like Apple, Amazon, Google, Nvidia, Microsoft) over time to help investors make informed investment decisions. \
+	✅ Collect daily stock prices of all the S&P 500 stocks for the last 10 years.\
+	✅ Compute price change/returns for the last 7 days, 30 days, and 1 year, and sector-wise performance.\
+	✅ Visualize key factors such as price trends, sector performance, and top gainers and losers via the Google Looker Studio dashboard.\
+	✅ Update data and a Google Looker Studio dashboard daily using batch processing.
 
 ### Problem description 
-- xxxx
-
-
 - Some of the questions answered:
-  ....
-
-Which stocks/sectors recovered fastest? how long does it take?
-Which stocks/sectors lagged in recovery?
-Which stocks/sectors start to recover first?
-Which stocks/sectors were benefited?
-Which stocks/sectors dropped the most and recovered fastest?(volatility) 
-stock trend
-全球恢复情况（China, India）
-- Why and possible effects
-
-
-"Which stocks had the highest monthly return?"
-"How volatile was a stock over a year?"
-"Which sector performed best in Q1 2024?"
-  
-
-
-stock market data, sector classifications, and historical trends. 
-A financial analyst wants to monitor S&P 500 sector performance to make informed investment decisions. The goal is to:
-✅ Collect daily stock prices of top stocks in each sector.
-✅ Compute moving averages, volatility, and sector-wise performance.
-✅ Update a Power BI dashboard daily using batch processing.
-automate process
-
-Top-Performing & Worst-Performing Stocks
-
-
-- What did I do in this project?
-batch processing
+"How's the S&P 500 performance for the last 10 years?"
+"Which sector performed best for the last 30 days?"
+"Which stocks had the highest return for the last 7 days, the last 30 days and the last 1 year?"
+"Which stocks had the lowest return for the last 7 days, the last 30 days and the last 1 year?"
+"What are the Top-Performing & Worst-Performing Stocks?"
+"How's the historical trends of the top gainer"
 
 ## Architecture and Technologies
 
@@ -59,7 +33,7 @@ batch processing
 
 
 
-The Technologies used:
+### The Technologies used:
 - Cloud: Google Cloud Platform(GCP)
 - Container: Docker, Docker Compose
 - Infrastructure as code (IaC): Terraform
@@ -68,12 +42,9 @@ The Technologies used:
 - Data Warehouse: BigQuery
 - Batch processing: Python
 - Transformation/Data Modeling: dbt
-- Dashboard/ Data Visualization: Google Data Studio
+- Dashboard/ Data Visualization: Google Looker Studio
 
 How does this end-to-end pipeline work?
-
-
-
 
 
 
@@ -374,59 +345,21 @@ stg_dates (time-based attributes).
 
 ### Dashboard/Visualization
 
-Overall Market Recovery
-Line Chart: Tracks the index trends (e.g., S&P 500, Nasdaq, Dow Jones) before, during, and after the pandemic.
-Cumulative Returns Chart: Shows how different indexes or major stocks have rebounded compared to a pre-pandemic baseline.
+![img](images/Dashboard.png)
+or  https://lookerstudio.google.com/reporting/94fbb36f-a6a8-406d-aa0a-4b3a19084a29 
+
+1. Overall Market Trends 
+Line Chart: Tracks the S&P 500 index trends over 10 years.
 2. Sector-wise Performance
-Bar Chart: Shows percentage gains/losses per sector post-pandemic.
+Bar Chart: Shows percentage gains/losses per sector for the last 30 days.
+3. Top Gainer Stock Price Trend
+Line Chart: Tracks 30-day-top-gainer stock price trends for 10 years.
+4. Top gainers/losers
+Bar Chart: Shows Top gainers and losers for the last 7 days, 30 days, and 1 year.
 
 
 
-
-
-
-
-
-# Post-Pandemic Stock Market Recovery
-
-e.g.1. Macro-Economic Impact Report:
-Objective: Analyzes the impact of macroeconomic factors (interest rates, inflation, GDP growth) on a stock or sector.
-e.g.2. Sector Performance Report:
-Objective: Analyzes the performance of a specific sector, such as technology or healthcare, and its impact on individual stocks within that sector.
-Example:
-Sector: Technology
-Sector Performance (Last Quarter):
-Total Market Cap: $5 trillion
-Average Return: +6%
-Best Performing Stocks:
-
-
-### Metrics
-
-Sector-wise Performance Heatmap to visualize sector-wise stock performance over time
-Which sectors recovered fastest?
-Tech (XLK) and Healthcare (XLV) likely have early strong green signals.
-Which sectors lagged in recovery?
-Travel & Real Estate may show prolonged red zones before turning green.
-How did stock movements change over time?
-Identify periods of volatility (e.g., Fed rate hikes in 2022).
-
-- 分析方法： 宏观分析 --》找最早恢复的那支/类股票-->具体分析原因
-### metrics:
-Define Recovery Metrics
-You can measure stock/sector recovery speed using:
-
-Recovery Percentage = (Post-pandemic High - Pandemic Low) / (Pre-pandemic High - Pandemic Low) * 100
-Time to Recovery = Number of days taken to reach pre-pandemic levels
-Trading Volume Surge = Indicates renewed investor confidence
-
-
-
-
-
-
-
-### Reproducing this repo(Try these in a VM after finished this project)
+## Reproducing this repo
 1. git clone 
 2. Environment setup
   - Set up Terraform, GCP account and SDK \
