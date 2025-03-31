@@ -1,0 +1,24 @@
+version: 2
+
+models:
+    - name: int_stock_returns
+      description: >
+        Calculate YTD Return, 1 year return, 3 year return. 
+      columns:
+          - name: ticker 
+            description: > 
+                A symbol represents a stock.
+            tests:
+              - relationships:
+                  to: ref('sp500_stocks_info')
+                  field: ticker
+                  severity: warn
+          - name: ytd_return 
+            description: price returns over this year to date.
+          - name: 1y_return 
+            description: price returns over a year.
+          
+
+
+          
+    

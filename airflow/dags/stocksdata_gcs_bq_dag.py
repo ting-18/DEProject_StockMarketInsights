@@ -14,9 +14,11 @@ from airflow.providers.google.cloud.transfers.gcs_to_bigquery import GCSToBigQue
 # import pyarrow.csv as pv
 # import pyarrow.parquet as pq
 import pandas as pd
+from datetime import date
+from dateutil.relativedelta import relativedelta
 import yfinance as yf
 
-PROJECT_ID = 'stockmarketrecovery'
+PROJECT_ID = 'sylvan-earth-454218-d0'
 BUCKET = 'stock_market_storage_bucket'
 BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'stock_market_dataset')
 
@@ -27,14 +29,18 @@ TICKERS.append("^GSPC")  # append S&P 500 index tikcer
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 
 def extract_data(tickers, n):
-    # Fetch stock data for each ticker
+    # Extrat daily stock data for 10 years each ticker from Yahoo Finance API
     if n<10:
         m = (n+1)*50
     else:
         m = len(tickers)
+    today = date.today()
+    ten_years_ago = today - relativedelta(years=10)
     data = []
     for ticker in tickers[n*50:m]:
-        stock_data = yf.download(ticker, start="2015-01-01", end="2025-03-01", interval="1d")  # Customize as per your need
+        if '.' in ticker:
+            ticker = ticker.replace(".", "-")
+        stock_data = yf.download(ticker, start=ten_years_ago, end=today, interval="1d")  # Customize as per your need
         data.append(stock_data)
 
     pdf1 = pd.DataFrame()
@@ -59,6 +65,8 @@ def extract_data(tickers, n):
 
 
 def upload_to_gcs(bucket, object_name, local_file):
+    # When upload_to_gcs, storage.Client() got Project_ID from Service_Account_Credential_Key.json
+    # (i.e.docker_compose.yaml: GOOGLE_APPLICATION_CREDENTIALS: /.google/credentials/google_credentials.json)
     """
     Ref: https://cloud.google.com/storage/docs/uploading-objects#storage-upload-object-python
     :param bucket: GCS bucket name
