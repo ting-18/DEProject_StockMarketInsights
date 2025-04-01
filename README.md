@@ -3,6 +3,11 @@
 ## Table of Content
 - [Overview](#overview)
 - [Architecture and Technologies](#architecture-and-technologies)
+- [ETL Data Pipeline](#etl-data-pipeline)
+ - [Extract and load data](#extract-and-load-data)
+ - [Data Transformation](#data-transformation)
+ - [Dashboard/Visualization](#dashboard-visualization)
+- [Reproducing this repo](#reproducing-this-repo)
 
 
 
@@ -26,12 +31,8 @@
 "How's the historical trends of the top gainer"
 
 ## Architecture and Technologies
-
-![architecture_image](images/  .png)
-
-
-
-
+### Architecture
+- ![architecture_image](images/  .png)
 
 ### The Technologies used:
 - Cloud: Google Cloud Platform(GCP)
@@ -48,19 +49,20 @@ How does this end-to-end pipeline work?
 
 
 
-## Data
-### Data Sources
-- Raw S&P 500 stocks data
-  - Get historical data from Yahoo Finance API via yfinance package.
-  - 
-- Reference table () for stock company information.
-- External data sources like COVID-cases, events, news that could impact stock price.
-- market indices info (optional). news events, macroeconomic indicators, or earnings reports for richer analysis.
+## ETL Data Pipeline
+### Extract and Load Data
+- Data sources:
+  - Raw S&P 500 stocks data: Get historical data from Yahoo Finance API via yfinance package.
+  - Reference table (sp500_stocks_info.csv) for stock company information.
+- DAG graph:
+  ![img](images/DAG_graph.png)
 
-NASDAQ 100 and Dow Jones 30
+- After ETL Pipeline, Data in BigQuery:
+  ![img](images/bq_table1.png)
+  ![img](images/bq_table2.png)
 
-
-### Data modeling: 
+### Data Transformation
+#### Data modeling: 
 
 
 Schema Design for Stock Analysis
@@ -177,10 +179,9 @@ Trade (TradeID, StockID, Timestamp, Price, Volume, TraderID)
 
 
 
-### dtb project: dbt-SQL-Transformation
+#### dbt project: dbt-SQL-Transformation
 A standard dbt project focuses on transforming and modeling raw data into analytics-ready tables, i.e. defining clear layers of transformations that clean, aggregate, and structure stock market data for analytics and reporting.
-### Design the dbt Models
-
+##### Design the dbt Models
 dbt project Structure: dbt follows a staging → intermediate → marts structure.
 ```
 stock_analysis/
