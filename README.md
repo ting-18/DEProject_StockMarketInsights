@@ -1,12 +1,13 @@
 # Stock Market Insights
 
 ## Table of Content
+
 - [Overview](#overview)
 - [Architecture and Technologies](#architecture-and-technologies)
 - [ETL Data Pipeline](#etl-data-pipeline)
- - [Extract and load data](#extract-and-load-data)
- - [Data Transformation](#data-transformation)
- - [Dashboard/Visualization](#dashboard-visualization)
+	 - [Extract and load data](#extract-and-load-data)
+	 - [Data Transformation](#data-transformation)
+	 - [Dashboard/Visualization](#dashboard-visualization)
 - [Reproducing this repo](#reproducing-this-repo)
 
 
