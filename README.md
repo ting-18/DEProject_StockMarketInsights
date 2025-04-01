@@ -7,7 +7,7 @@
 - [ETL Data Pipeline](#etl-data-pipeline)
 	 - [Extract and load data](#extract-and-load-data)
 	 - [Data Transformation](#data-transformation)
-	 - [Dashboard/Visualization](#dashboard-visualization)
+	 - [Dashboard/Visualization](#dashboardvisualization)
 - [Reproducing this repo](#reproducing-this-repo)
 
 
@@ -33,7 +33,7 @@
 
 ## Architecture and Technologies
 ### Architecture
-- ![architecture_image](images/  .png)
+- ![architecture_image](images/architecture.png)
 
 ### The Technologies used:
 - Cloud: Google Cloud Platform(GCP)
