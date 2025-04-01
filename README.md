@@ -4,7 +4,7 @@
 
 - [Overview](#overview)
 - [Architecture and Technologies](#architecture-and-technologies)
-- [ETL Data Pipeline](#etl-data-pipeline)
+- [ELT Data Pipeline](#elt-data-pipeline)
 	 - [Extract and load data](#extract-and-load-data)
 	 - [Data Transformation](#data-transformation)
 	 - [Dashboard/Visualization](#dashboardvisualization)
@@ -50,7 +50,7 @@ How does this end-to-end pipeline work?
 
 
 
-## ETL Data Pipeline
+## ELT Data Pipeline
 ### Extract and Load Data
 - Data sources:
   - Raw S&P 500 stocks data: Get historical data from Yahoo Finance API via yfinance package.
@@ -94,7 +94,7 @@ stock_analysis/
 │── macros/
 
 ```
-staging/ → Ceans and standardizes raw data (1:1 with source tables).\
+staging/ → Cleans and standardizes raw data (1:1 with source tables).\
 intermediate/ → Derived tables for calculations (e.g., returns, price change).\
 marts/ → Final analytics tables for reporting.\
 seeds/ → Static reference data (e.g., stocks info).\
@@ -109,45 +109,14 @@ tests/ → Data quality tests (e.g., null checks, uniqueness). Ensure data quali
 Create aggregated or derived calculations such as moving averages, stock returns, volatility, etc.
 Derived Tables: used to feed into final reporting tables.
 
-e.g. 
-Fact Table: monthly_returns stores precomputed results for performance analysis.
-Granularity: Monthly-level summary.
-Optimization: Improves dashboard performance.
-
-
-| Table Name | Purpose |
-|------------|----------|
-| int_stock_returns | Calculates daily, weekly, and monthly returns.|
-| int_moving_averages | Computes 30-day and 90-day moving averages. |
-| int_sector_performance | Aggregates stock performance by sector. |
-| int_volatility | Measures stock volatility (standard deviation of returns). |
-| int_news_impact | Computes sentiment scores for stock movements. |
-
-Table: stock_performance_fact (Granularity: Monthly)
-
-Tracks historical stock performance over time.
-Easy to calculate daily returns, volatility, moving averages, etc.
-Supports slicing by date, company, sector, or exchange.
-
-
-
-
-
 #### 3. Marts Layer (dim_* and fact_*) - Analytics: Provides final tables for dashboarding. 
-Goal: Create Fact & Dimension tables for business insights.
+Create Fact & Dimension tables for business insights.
 Star Schema → Fact Tables & Dimension Tables.
 	Fact tables: Contain numerical values for analytics. (aggregated fact table)
 	Dimension tables: Contain descriptive information.
-| Table Name | Purpose |
-|------------|----------|
-| fact_stock_prices |	Main table with price, volume, returns, and moving averages. |
-| fact_trading_activity |	Aggregated trading volume and order flow. |
-| fact_news_sentiment |	Sentiment trends over time for stocks. |
-| dim_stock_metadata | Stock details (company name, sector, industry). |
-| dim_dates	| Date dimension for time-based filtering. |
-	
 
-
+#### dbt Lineage: 
+![img](images/dbt_lineage.png)
 
 
 ### Dashboard/Visualization
@@ -167,7 +136,7 @@ Bar Chart: Shows Top gainers and losers for the last 7 days, 30 days, and 1 year
 
 
 ## Reproducing this repo
-1. git clone 
+1. git clone https://github.com/ting-18/DEProject_StockMarketInsights/tree/main
 2. Environment setup
   - Set up Terraform, GCP account and SDK \
     Local install and setup terraform: \
@@ -178,16 +147,17 @@ Bar Chart: Shows Top gainers and losers for the last 7 days, 30 days, and 1 year
        gcloud init
        gcloud auth application-default login   #After this, $GOOGLE_APPLICATION_CREDENTIALS was set to google cloud account default credential.json. Which is different from Service Account credential.
        ``` 
-    Set Service Account for this project: GCP console >menu>IAM & Admin> Service Accounts -> Create service account ---> once created, click three dots at the right>Manage Keys>json> save the downloaded serviceaccount_credential.json file.
+    Set Service Account for this project: GCP console >menu>IAM & Admin> Service Accounts -> Create service account ---> once created, click three dots at the right>Manage Keys>json> save the downloaded serviceaccount_credential.json file.  
     
   - Set up Cloud Infrastructure(Bucket and dataset) via terraform
-    Edit terraform/variables.tf and run commands below.
+    Edit terraform/variables.tf and run the commands below.
     ```
     #Git Bash shell      
     cd 1_terraform-gcp/terraform
     terraform init
     terraform plan
     terraform apply
+    
     terraform destroy 
     ```
 3. EL pipeline via airflow  
@@ -210,18 +180,17 @@ Bar Chart: Shows Top gainers and losers for the last 7 days, 30 days, and 1 year
     docker-compose down   
     ```
 - Check or manually run Dag/pipeline in Browser: localhost:8080    airflow/airflow \
-  Two DAGs: stocksdata_gcs_bq_dag - Extrat stock data for 10 years. \
-  		_dag - Scheduled daily, and extract today's stock data at the end of a day.
+  DAG: stocksdata_gcs_bq_dag - Run manually, Extrat stock data for the last 10 years. \
   
 
 4. dbt Transformation
    ```
-   dbt 
+   dbt build
+   
    ```
 
 
-
-
 ## Further work
-(all the tickers whose stock price is under 200 dollars )
-stock recommendation model
+(all the tickers whose stock price is under 200 dollars ) \
+add stock recommendation model to pipeline.
+...
