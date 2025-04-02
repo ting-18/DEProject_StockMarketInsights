@@ -160,14 +160,18 @@ Bar Chart: Shows Top gainers and losers for the last 7 days, 30 days, and 1 year
     
     terraform destroy 
     ```
-3. EL pipeline via airflow  
+3. ELT pipeline via airflow  
 
 - Environment setup 
   ```
   #Git Bash shell  
   mv $HOME/Downloads/<YOUR SERVICE ACCOUNT KEY>.json ~/.google/credentials/google_credentials.json
   ```
-  Edit docker-compose.yaml: GCP_PROJECT_ID
+- Edit files:
+  Edit airflow/docker-compose.yaml: GCP_PROJECT_ID \
+  Edit airflow/dags/   : PROJECT_ID, BUCKET, BIGQUERY_DATASET \
+  Edit dbt/.dbt/profiles.ymal:  dataset, project \
+  Edit dbt/models/staging/schema.yaml : database, schema \
 
 - Build and run custom airflow container
     ```
@@ -180,14 +184,11 @@ Bar Chart: Shows Top gainers and losers for the last 7 days, 30 days, and 1 year
     docker-compose down   
     ```
 - Check or manually run Dag/pipeline in Browser: localhost:8080    airflow/airflow \
-  DAG: stocksdata_gcs_bq_dag - Run manually, Extrat stock data for the last 10 years. \
+  DAG: stocksdata_gcs_bq_dag - Run manually, Extract stock data for the last 10 years (1 year for test) \
+  	daily_schedule_update_dag - Run schedule daily, Update /insert new data daily
   
+- Dashboard: Looker Studio will update the dashboard automatically.
 
-4. dbt Transformation
-   ```
-   dbt build
-   
-   ```
 
 
 ## Further work
