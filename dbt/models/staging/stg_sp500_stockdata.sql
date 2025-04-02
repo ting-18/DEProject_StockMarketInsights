@@ -18,10 +18,6 @@ with stockdata as
   where ticker is not null 
 )
 select
-    -- identifiers
-    -- {{ dbt_utils.generate_surrogate_key(['Ticker', 'Date']) }} as stockid,
-    -- {{ dbt.safe_cast("vendorid", api.Column.translate_type("integer")) }} as vendorid,    
-    
     -- stock symbol:use Jinja to ensure compatibility across different databases:
     {{ dbt.safe_cast('ticker', api.Column.translate_type('string')) }} as ticker,
 

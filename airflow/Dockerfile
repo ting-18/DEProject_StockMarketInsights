@@ -4,6 +4,9 @@
 FROM apache/airflow:2.10.5-python3.8
 
 ENV AIRFLOW_HOME=/opt/airflow
+#for dbt:tells dbt where to find the profiles.yml configuration file,
+# which contains database connection settings.
+ENV DBT_PROFILES_DIR=/opt/airflow/.dbt
 
 USER root
 RUN apt-get update -qq && apt-get install vim -qqq

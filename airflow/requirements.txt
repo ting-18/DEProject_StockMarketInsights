@@ -1,3 +1,5 @@
 yfinance
 apache-airflow-providers-google
 pyarrow
+dbt-core
+dbt-bigquery
