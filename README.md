@@ -47,9 +47,9 @@
 - Dashboard/ Data Visualization: Google Looker Studio
 
 ### Data Warehouse -BigQuery Tables Design
-The BigQuery table `stg_sp500_stockdata` is designed with performance and cost-efficiency for analytical queries. We've implemented the following partitioning and clustering strategy:
-- Partitioning by `trade_date`: The table is partitioned by the trade_date column on a daily basis. This is a crucial decision as most analytical queries on stocks data involve filtering by specific time ranges (e.g., find tops for the last 7 days or last 1 year). Partitioning allows BigQuery to scan only the relevant partitions, significantly reducing query costs and improving performance.
-- Clustering by `ticker`: We've chosen to cluster the data by `ticker` fields. This is based on the expectation that common analytical queries will involve filtering or aggregating data based on specific tickers (e.g., price trend, returns). Clustering co-locates data with similar values for these columns within each partition, further enhancing query performance.
+The BigQuery table `stg_sp500_stockdata` is optimized for performance and cost-efficiency in analytical queries through the following partitioning and clustering strategy:
+- Partitioning by `trade_date`: The table is partitioned daily by the trade_date column. This is a key optimization since most stock-related queries filter data within specific time ranges (e.g., identifying top performers over the past week or year). Partitioning ensures that BigQuery scans only the necessary partitions, significantly lowering query costs and improving performance.
+- Clustering by `ticker`: Data is clustered by the ticker column to optimize queries that filter or aggregate data based on specific stocks (e.g., analyzing price trends or calculating returns). Clustering groups similar values within each partition, further enhancing query efficiency.
 
 ## ELT Data Pipeline
 ### Extract and Load Data
